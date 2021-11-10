@@ -5,7 +5,7 @@ let text = document.querySelector(".output-login"); //messaggio di accesso
 let mailCheck; //variabile per vedere se la mail è nel sistema
 let loginLayover = document.querySelector(".login-section"); //layover della seizone login
 let gameLayover = document.querySelector(".game"); //layover della sezione dei dadi
-let playerName = document.getElementById("player-email")
+let playerName = document.getElementById("player-email") //email giocatore sul dado
 
 emailName.addEventListener("click", function() {
     loginLayover.classList.remove("layover");
