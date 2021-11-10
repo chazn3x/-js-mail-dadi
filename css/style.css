@@ -5,7 +5,6 @@
 }
 .container {
     max-width: 600px;
-    height: 300px;
     margin: 20px auto;
     padding: 20px;
     background: rgb(158, 103, 0);
@@ -19,6 +18,7 @@ h1 {
 p {
     padding: 30px;
 }
+/* sezione login */
 .login-section .input {
     display: flex;
     justify-content: center;
@@ -38,7 +38,8 @@ p {
     outline: none;
     height: 25px;
 }
-.login-section .btns button {
+.login-section .btns button,
+.game button {
     padding: 8px 13px;
     border: none;
     background: rgb(104, 50, 0);
@@ -48,4 +49,38 @@ p {
 }
 .login-section .output {
     margin: 30px;
+}
+
+/* sezione gioco */
+.game .dadi {
+    display: flex;
+    justify-content: space-evenly;
+}
+.game .dado {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 20px;
+}
+.dado .faccia {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dado .faccia .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faccia .dot {
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 50%;
+    opacity: 0;
+}
+.faccia .dot.sei {
+    opacity: 1;
 }
