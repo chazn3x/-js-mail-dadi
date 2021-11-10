@@ -5,11 +5,13 @@ let text = document.querySelector(".output-login"); //messaggio di accesso
 let mailCheck; //variabile per vedere se la mail è nel sistema
 let loginLayover = document.querySelector(".login-section"); //layover della seizone login
 let gameLayover = document.querySelector(".game"); //layover della sezione dei dadi
+let playerName = document.getElementById("player-email")
 
 emailName.addEventListener("click", function() {
     loginLayover.classList.remove("layover");
     gameLayover.classList.add("layover")
     mailCheck = false;
+    playerName.innerHTML = "Giocatore";
 });
 
 //pulsante per accedere
@@ -20,6 +22,7 @@ signin.addEventListener("click", function() {
         text.innerHTML = "Inserisci una mail valida";
         gameLayover.classList.add("layover")
         loginLayover.classList.remove("layover");
+        playerName.innerHTML = "Giocatore";
     } else {
         let email = emailName.value + emailDomain.value; //concatenazione email
         //controllo delle mail nel sistema
@@ -33,7 +36,7 @@ signin.addEventListener("click", function() {
             emailName.value = "";
             gameLayover.classList.remove("layover");
             loginLayover.classList.add("layover");
-
+            playerName.innerHTML = email;
         } else {
             text.innerHTML = "Non sei iscritto/a, iscriviti per giocare";
             gameLayover.classList.add("layover");
@@ -49,6 +52,7 @@ signup.addEventListener("click", function() {
         text.innerHTML = "Inserisci una mail valida";
         gameLayover.classList.add("layover");
         loginLayover.classList.remove("layover");
+        playerName.innerHTML = "Giocatore";
     } else {
         let email = emailName.value + emailDomain.value; //concatenazione email
         //controllo delle mail nel sistema
@@ -62,6 +66,7 @@ signup.addEventListener("click", function() {
             emailName.value = "";
             gameLayover.classList.remove("layover");
             loginLayover.classList.add("layover");
+            playerName.innerHTML = email;
 
         } else {
             mailList.push(email);
@@ -70,6 +75,7 @@ signup.addEventListener("click", function() {
             mailCheck = true;
             gameLayover.classList.remove("layover");
             loginLayover.classList.add("layover");
+            playerName.innerHTML = email;
         }
     }
 });
@@ -80,7 +86,8 @@ play.addEventListener("click", function() {
     if (mailCheck == false) {
         text.innerHTML = "Devi prima accedere o iscriverti"; // il gioco non parte se non si effettua l'accesso
         loginLayover.classList.remove("layover");
-        gameLayover.classList.add("layover")
+        gameLayover.classList.add("layover");
+        playerName.innerHTML = "Giocatore";
     } else {
 
         // mossa giocatore

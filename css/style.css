@@ -61,14 +61,14 @@ p {
     display: flex;
     justify-content: space-evenly;
 }
-.game .dado {
+.game span {
+    line-height: 30px;
+}
+.dado .faccia {
     width: 100px;
     height: 100px;
     background: white;
     border-radius: 20px;
-}
-.dado .faccia {
-    height: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -88,4 +88,7 @@ p {
 }
 .faccia .dot.sei {
     opacity: 1;
+}
+.game .output-gioco {
+    font-size: 2em;
 }
