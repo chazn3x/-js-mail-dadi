@@ -61,6 +61,13 @@ p {
     display: flex;
     justify-content: space-evenly;
 }
+.game .dado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
 .game span {
     line-height: 30px;
 }

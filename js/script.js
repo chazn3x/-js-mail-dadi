@@ -2,7 +2,7 @@ let mailList = []; //array mail degli iscritti
 let emailName = document.getElementById("email"); //nome della mail
 let emailDomain = document.getElementById("domain"); //dominio della mail
 let text = document.querySelector(".output-login"); //messaggio di accesso
-let mailCheck; //variabile per vedere se la mail è nel sistema
+let mailCheck = false; //variabile per vedere se la mail è nel sistema
 let loginLayover = document.querySelector(".login-section"); //layover della seizone login
 let gameLayover = document.querySelector(".game"); //layover della sezione dei dadi
 let playerName = document.getElementById("player-email") //email giocatore sul dado
