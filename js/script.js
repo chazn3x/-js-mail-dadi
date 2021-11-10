@@ -49,3 +49,13 @@ signup.addEventListener("click", function() {
         }
     }
 });
+
+// pulsante per giocare
+let play = document.getElementById("play");
+play.addEventListener("click", function() {
+    // creazione numeri interi casuali da 1 a 6
+    let player = Math.floor(Math.random() * 6) +1;
+    let computer = Math.floor(Math.random() * 6) +1;
+    console.log(player);
+    console.log(computer);
+});
