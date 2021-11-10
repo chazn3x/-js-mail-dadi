@@ -11,6 +11,7 @@
     color: rgb(255, 228, 178);
     font-family: sans-serif;
     text-align: center;
+    border-radius: 20px;
 }
 h1 {
     text-transform: uppercase;
@@ -47,11 +48,15 @@ p {
     color: white;
     border-radius: 6px;
 }
-.login-section .output-login {
+.login-section .output-login,
+.game .output-gioco {
     margin: 30px;
 }
 
 /* sezione gioco */
+.layover {
+    opacity: .5;
+}
 .game .dadi {
     display: flex;
     justify-content: space-evenly;
@@ -82,5 +87,5 @@ p {
     opacity: 0;
 }
 .faccia .dot.sei {
-    opacity: 0;
+    opacity: 1;
 }

@@ -2,13 +2,24 @@ let mailList = []; //array mail degli iscritti
 let emailName = document.getElementById("email"); //nome della mail
 let emailDomain = document.getElementById("domain"); //dominio della mail
 let text = document.querySelector(".output-login"); //messaggio di accesso
-let mailCheck = false; //variabile per vedere se la mail è nel sistema
+let mailCheck; //variabile per vedere se la mail è nel sistema
+let loginLayover = document.querySelector(".login-section"); //layover della seizone login
+let gameLayover = document.querySelector(".game"); //layover della sezione dei dadi
+
+emailName.addEventListener("click", function() {
+    loginLayover.classList.remove("layover");
+    gameLayover.classList.add("layover")
+    mailCheck = false;
+});
 
 //pulsante per accedere
 let signin = document.getElementById("signin");
 signin.addEventListener("click", function() {
+    mailCheck = false;
     if (emailName.value == "") {
         text.innerHTML = "Inserisci una mail valida";
+        gameLayover.classList.add("layover")
+        loginLayover.classList.remove("layover");
     } else {
         let email = emailName.value + emailDomain.value; //concatenazione email
         //controllo delle mail nel sistema
@@ -19,9 +30,13 @@ signin.addEventListener("click", function() {
         }
         if (mailCheck == true) {
             text.innerHTML = "Bentornato/a";
+            emailName.value = "";
+            gameLayover.classList.remove("layover");
+            loginLayover.classList.add("layover");
 
         } else {
             text.innerHTML = "Non sei iscritto/a, iscriviti per giocare";
+            gameLayover.classList.add("layover");
         }
     }
 });
@@ -29,8 +44,11 @@ signin.addEventListener("click", function() {
 //pulsante per iscriversi
 let signup = document.getElementById("signup");
 signup.addEventListener("click", function() {
+    mailCheck = false;
     if (emailName.value == "") {
         text.innerHTML = "Inserisci una mail valida";
+        gameLayover.classList.add("layover");
+        loginLayover.classList.remove("layover");
     } else {
         let email = emailName.value + emailDomain.value; //concatenazione email
         //controllo delle mail nel sistema
@@ -41,11 +59,17 @@ signup.addEventListener("click", function() {
         }
         if (mailCheck == true) {
             text.innerHTML = "Sei già iscritto/a";
+            emailName.value = "";
+            gameLayover.classList.remove("layover");
+            loginLayover.classList.add("layover");
 
         } else {
             mailList.push(email);
             text.innerHTML = "Benvenuto/a";
+            emailName.value = "";
             mailCheck = true;
+            gameLayover.classList.remove("layover");
+            loginLayover.classList.add("layover");
         }
     }
 });
@@ -55,6 +79,8 @@ let play = document.getElementById("play");
 play.addEventListener("click", function() {
     if (mailCheck == false) {
         text.innerHTML = "Devi prima accedere o iscriverti"; // il gioco non parte se non si effettua l'accesso
+        loginLayover.classList.remove("layover");
+        gameLayover.classList.add("layover")
     } else {
 
         // mossa giocatore
@@ -123,6 +149,16 @@ play.addEventListener("click", function() {
             computerNum[i].style.opacity = "1"; // si rendono visibili i pallini a seconda del risultato 
         }
 
+        // risultati
+
+        let result = document.querySelector(".output-gioco");
+        if (player < computer) {
+            result.innerHTML = "Hai perso!"
+        } else if (player > computer) {
+            result.innerHTML = "Hai vinto!"
+        } else {
+            result.innerHTML = "Pareggio!"
+        }
 
     }
 });
