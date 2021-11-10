@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(158, 103, 0);
+    color: rgb(255, 228, 178);
+    font-family: sans-serif;
+    text-align: center;
+}
+h1 {
+    text-transform: uppercase;
+}
+p {
+    padding: 30px;
+}
+.login-section .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.login-section .input #email {
+    border: none;
+    height: 25px;
+    padding: 0 5px;
+    outline: none;
+    border-radius: 3px;
+    margin: 0 10px;
+}
+.login-section .input #domain {
+    border: none;
+    outline: none;
+    height: 25px;
+}
+.login-section .btns button {
+    padding: 8px 13px;
+    border: none;
+    background: rgb(104, 50, 0);
+    cursor: pointer;
+    color: white;
+    border-radius: 6px;
+}
+.login-section .output {
+    margin: 30px;
+}

@@ -9,24 +9,32 @@
 </head>
 <body>
     
-    <main>
+    <div class="container">
+        <!-- titolo -->
+        <h1>Il gioco dei dadi</h1>
+        <p>Accedi o iscriviti per giocare</p>
         <!-- sezione login -->
         <div class="login-section">
-            <!-- prima parte email -->
-            <label for="email">Inserisci la tua email</label>
-            <input id="email" type="email" placeholder="Email">
-            <!-- dominio email -->
-            <select id="domain">
-                <option value="@gmail.com">@gmail.com</option>
-                <option value="@hotmail.it">@hotmail.it</option>
-                <option value="@libero.it">@libero.it</option>
-            </select>
-            <button id="signin">Accedi</button>
-            <button id="signup">Iscriviti</button>
+            <div class="input">
+                <!-- prima parte email -->
+                <label for="email">Inserisci la tua email</label>
+                <input id="email" type="email" placeholder="Email">
+                <!-- dominio email -->
+                <select id="domain">
+                    <option value="@gmail.com">@gmail.com</option>
+                    <option value="@hotmail.it">@hotmail.it</option>
+                    <option value="@libero.it">@libero.it</option>
+                </select>
+            </div>
+            <div class="btns">
+                <button id="signin">Accedi</button>
+                <button id="signup">Iscriviti</button>
+            </div>
             <!-- output -->
-            <div id="output"></div>
+            <div class="output"></div>
         </div>
-    </main>
+        
+    </div>
 
     <script src="js/script.js"></script>
 
