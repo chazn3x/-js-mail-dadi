@@ -47,7 +47,7 @@ p {
     color: white;
     border-radius: 6px;
 }
-.login-section .output {
+.login-section .output-login {
     margin: 30px;
 }
 
@@ -82,5 +82,5 @@ p {
     opacity: 0;
 }
 .faccia .dot.sei {
-    opacity: 1;
+    opacity: 0;
 }
